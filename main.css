@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #ecf0f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+.app{
+    display: flex;
+}
+.success,
+.warning,
+.error{
+    margin: 0 12px;
+    padding: 8px 16px;
+    font-size: 20px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: 2s;
+}
+
+.success{
+    background: rgb(0, 128, 0);
+}
+.warning{
+    background: rgb(255, 165, 0);
+}
+.error{
+    background: rgb(255,0, 0);
+}
+ul{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 316px;
+    list-style: none;
+}
+li{
+    width: 316px;
+    animation: slideshow 1s ease forwards;
+    padding: 20px;
+    font-size: 16px;
+    color: white;
+    margin-top: 10px;
+}
+.div{
+    display: flex;
+    align-items: center;
+}
+li i{
+    margin-right: 5px;
+    font-size: 22px;
+}
+.success_border{
+    border-left:5px solid rgb(0, 128, 0);
+}
+.warning_border{
+    border-left: 5px solid rgb(255, 165, 0);
+}
+.error_border{
+    border-left: 5px solid rgb(255, 0, 0);
+}
+@keyframes slideshow{
+    0% {
+		transform: translateX(100%);
+	}
+	40% {
+		transform: translateX(-10%);
+	}
+	80% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-10px);
+	}
+}
+@keyframes countdown{
+    0% {
+		transform: translateX(-10px);
+	}
+	40% {
+		transform: translateX(0%);
+	}
+	80% {
+		transform: translateX(-10%);
+	}
+	100% {
+		transform: translateX(120%);
+	}
+}
+@keyframes countdown2 {
+	20% {
+		width: 100%;
+	}
+	100% {
+		width: 0;
+	}
+}
+.success_press,
+.warning_press,
+.error_press{
+    position: absolute;
+    top: 62px;
+    left: 0;
+    height: 3px;
+    width: 311px;
+    animation: countdown2 4s linear forwards;
+}
+.success_press{
+    background: rgb(0, 128, 0);
+}
+.warning_press{
+    background: rgb(255, 165, 0);
+}
+.error_press{
+    background: rgb(255, 0, 0);
+}
